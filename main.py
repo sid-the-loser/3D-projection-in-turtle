@@ -111,6 +111,8 @@ def conv_coords(coords):
 
 zoom = 50
 
+#You can change the vert and edges values with anything else that you would want...that means..this thing can draw more than a cube...INFINITE possibilities
+
 verts = (
     (1, -1, -1),
     (1, 1, -1),
