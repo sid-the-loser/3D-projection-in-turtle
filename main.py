@@ -2,7 +2,7 @@
 Code written by: Sid The Loser
 
 Refrences from:
-    https://en.wikipedia.org/wiki/3D_projection#:~:text=A%203D%20projection%20(or%20graphical,capability%20on%20a%20simpler%20plane.
+    https://en.wikipedia.org/wiki/3D_projection
     https://en.wikipedia.org/wiki/Rotation_matrix
 
 Description from the developer:
