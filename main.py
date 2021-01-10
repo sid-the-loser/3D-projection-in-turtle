@@ -1,10 +1,8 @@
 """
 Code written by: Sid The Loser
-
 Refrences from:
     https://en.wikipedia.org/wiki/3D_projection
     https://en.wikipedia.org/wiki/Rotation_matrix
-
 Description from the developer:
     This code took me 2 hours to finish and the whole code was done in a rush...so...I'm sorry if you are having a hard time reading it.
 """
@@ -54,11 +52,9 @@ def rotateX(angle, coords): # This defention does the math to rotate X axis in t
 
     """
     The X on the top there just defines this:
-
         [ 1,    0,    0]
         [ 0, cosθ, sinθ]
         [ 0, sinθ, cosθ]
-
     """
 
     if len(coords) == 3:
@@ -83,11 +79,9 @@ def rotateY(angle, coords): # This defention does the math to rotate Y axis in t
 
     """
     The X on the top there just defines this:
-
         [ cosθ, 0, sinθ]
         [    0, 1,    0]
         [-sinθ, 0, cosθ]
-
     """
 
     if len(coords) == 3:
@@ -112,11 +106,9 @@ def rotateZ(angle, coords): # This defention does the math to rotate Z axis in t
 
     """
     The X on the top there just defines this:
-
         [ cosθ, -sinθ, 0]
         [ sinθ,  cosθ, 0]
         [    0,     0, 1]
-
     """
 
     if len(coords) == 3:
@@ -134,17 +126,12 @@ def conv_coords(coords): # This defenition is to covert 3D coordinates to 2D coo
     if len(coords) == 3:
         return coords[0], coords[1]
         """This does the same thing as projection matrix but easier:
-
             Projection Matrix:
-
                 [1, 0, 0]
                 [0, 1, 0] * [12, 30, 15] = [12, 30]
                 [0, 0, 0]
-
             My code:
-
                 conv_coords([12, 30, 15]) --> Haha just return the X and Y coordinates --> [12, 30]
-
         """
 
     else:
@@ -178,7 +165,7 @@ edges = ( # This is the list that stores which all verts to connect to form the 
 
 zoom = 50 # This is some lazy way to englarge the cube's size...this will be changes soon...
 
-angle = 0 # This is another lazy code that I did...this will also be changes in the next version...but currntly stores the rotation of the cube...
+angle = [0, 0, 0] # This is the angle of the cube...
 
 while True:
     try:
@@ -189,14 +176,12 @@ while True:
         vert_list = [] # This is to store the 2D coordiates of the cube verts for the edges code to refrence off of...
 
         for vert in verts:
-            x, y = conv_coords(rotateX(angle, rotateY(angle, rotateZ(angle, vert)))) #This line of code rotates the cube vert coordinates and converts them to 2D coordinates for the turtle to display them...
+            x, y = conv_coords(rotateX(angle[0], rotateY(angle[1], rotateZ(angle[2], vert)))) #This line of code rotates the cube vert coordinates and converts them to 2D coordinates for the turtle to display them...
             draw_point(x*zoom, y*zoom) # This just draws a point on the screen using the X and Y coordinates from the complex code given above...
             vert_list.append([x*zoom, y*zoom]) # This is for the edges code given below to reference the 2D coordinates that we get from the cube verts...
 
         for i in range(len(edges)):
             draw_line(vert_list[edges[i][0]], vert_list[edges[i][1]]) # This is the code that we use to connect all the edges of the cube...
-
-        angle += 0.001 # This just adds 0.001 to angle
 
     except Exception as e: # This type of canvas update error managment was taken from my other repository: https://github.com/sid-the-loser/turtle-common-update-error/ ...
         print(e)
