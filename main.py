@@ -1,8 +1,10 @@
 """
-Code written by: Sid The Loser
+Code written by: Sid The Loser aka SIdharth S
+
 Refrences from:
     https://en.wikipedia.org/wiki/3D_projection
     https://en.wikipedia.org/wiki/Rotation_matrix
+    
 Description from the developer:
     This code took me 2 hours to finish and the whole code was done in a rush...so...I'm sorry if you are having a hard time reading it.
 """
