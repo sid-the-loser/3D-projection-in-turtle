@@ -1,3 +1,4 @@
 # 3D projection in turtle
 
-*more details to be added later...*
+## Heres how it looks:
+![demo](https://raw.githubusercontent.com/sid-the-loser/3D-projection-in-turtle/refs/heads/main/demo.gif)
